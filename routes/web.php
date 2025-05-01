@@ -8,6 +8,8 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\MFAController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,4 +49,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.delete');
+    Route::get('/mfa/send', [MFAController::class, 'sendCode'])->name('mfa.send');
+    Route::get('/mfa/verify', [MFAController::class, 'verifyForm'])->name('mfa.form');
+    Route::post('/mfa/verify', [MFAController::class, 'verify'])->name('mfa.verify');
 });
