@@ -44,6 +44,12 @@
 ## Enhancement Made
 1. Store roles
 2. View each user’s tasks
-3. user can to CRUD only
-
-
+3. User can to create new task but not edit/delete
+------------------------------------------------
+# Assignment 4
+## Enhanced Files and Enhancement Made
+1. Installed spatie/laravel-csp
+2. Created CustomPolicy.php
+3. Implemented CSP using Spatie's CSP package to prevent malicious inline scripts and control resource loading.
+4. Delete output that have {{!!$ !!}} - to prevent XSS
+5. Add @csrf token in all forms
